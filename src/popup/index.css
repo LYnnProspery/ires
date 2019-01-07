@@ -1,0 +1,138 @@
+body {
+  height: 500px;
+}
+* {
+  transition: all .4s ease;
+}
+.divider {
+  height: 1px;
+  background: #efecec;
+  margin: 10px 0;
+}
+.down-arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ccc;
+  border-left: 0;
+  border-top: 0;
+  transform: rotateZ(45deg);
+  margin: -5px 0 0 10px;
+}
+#app {
+  width: 400px;
+}
+#app .header-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#app .header-layout img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+#app .header-layout .app-title {
+  height: 40px;
+  line-height: 40px;
+  font-size: 40px;
+  font-weight: 200;
+  margin: 0;
+}
+#app .ops-layout .create-btn {
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+#app .ops-layout .create-btn.create-inspector-btn {
+  background: #ed5024;
+  border: 1px solid #fff;
+  color: #fff;
+}
+#app .ops-layout .create-btn.create-mock-btn {
+  background: #2b7ffe;
+  color: #fff;
+}
+#app .ops-layout .create-mock-detail-layout {
+  margin-top: 10px;
+  position: relative;
+  color: #686666;
+}
+#app .ops-layout .create-mock-detail-layout .method-list {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 70px;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  background: #fff;
+  z-index: 99;
+}
+#app .ops-layout .create-mock-detail-layout .method-list .method-item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: -1px;
+  height: 25px;
+  padding-left: 10px;
+  line-height: 25px;
+  cursor: pointer;
+}
+#app .ops-layout .create-mock-detail-layout .method-list .method-item:hover {
+  background: #e8e8e8;
+}
+#app .ops-layout .create-mock-detail-layout .new-mock-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: 5px;
+}
+#app .ops-layout .create-mock-detail-layout .new-mock-form .method-config-btn {
+  display: inline-block;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -1px;
+  cursor: pointer;
+}
+#app .ops-layout .create-mock-detail-layout .new-mock-form .method-config-btn:hover {
+  background: #ececec;
+}
+#app .ops-layout .create-mock-detail-layout .new-mock-form .input-layout {
+  display: inline-block;
+  flex: 1;
+}
+#app .ops-layout .create-mock-detail-layout .new-mock-form .url-config-input {
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: normal;
+  border: none;
+  border-left: 1px solid #ccc;
+  outline: none;
+  padding-left: 10px;
+}
+#app .ops-layout .btn-group {
+  margin-top: 5px;
+}
+#app .ops-layout .btn-group button {
+  width: 70px;
+  height: 26px;
+  font-size: 10px;
+}
+#app .ops-layout .btn-group button.add-mock {
+  background: #ed5024;
+  border: 0;
+}
+#app .ops-layout .btn-group button.cancel {
+  color: #686666;
+}

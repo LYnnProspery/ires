@@ -1,0 +1,161 @@
+body {
+    // background: rgb(242, 242, 242);
+    height: 500px;
+}
+* {
+    transition: all .4s ease;
+}
+
+.divider {
+    height: 1px;
+    background: rgb(239, 236, 236);
+    margin: 10px 0;
+}
+
+.down-arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ccc;
+    border-left: 0;
+    border-top: 0;
+    transform: rotateZ(45deg);
+    margin: -5px 0 0 10px;
+}
+
+#app {
+    width: 400px;
+    .header-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        img {
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .app-title {
+            height: 40px;
+            line-height: 40px;
+            font-size: 40px;
+            font-weight: 200;
+            margin: 0;
+        }
+    }
+
+    .ops-layout {
+        .create-btn {
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            
+            &.create-inspector-btn {
+                background: rgb(237, 80, 36);
+                border: 1px solid #fff;
+                color: #fff;
+            }
+
+            &.create-mock-btn {
+                background: rgb(43, 127, 254);
+                color: #fff;
+            }
+
+        }
+
+        .create-mock-detail-layout {
+            margin-top: 10px;
+            position: relative;
+            color: rgb(104, 102, 102);
+
+            .method-list {
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                overflow: hidden;
+                overflow-y: scroll;
+                width: 70px;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                background: #fff;
+                z-index: 99;
+    
+                .method-item {
+                    border-bottom: 1px solid #ccc;
+                    margin-bottom: -1px;
+                    height: 25px;
+                    padding-left: 10px;
+                    line-height: 25px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: rgb(232, 232, 232);
+                    }
+                }
+            }
+
+            .new-mock-form {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                border: 1px solid #ccc;
+                overflow: hidden;
+                border-radius: 5px;
+            
+                .method-config-btn {
+                    display: inline-block;
+                    height: 30px;
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    width: 70px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: -1px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: rgb(236, 236, 236);
+                    }
+                }
+                .input-layout {
+                    display: inline-block;
+                    flex: 1;
+                }
+                .url-config-input {
+                    height: 30px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    line-height: normal;
+                    border: none;
+                    border-left: 1px solid #ccc;
+                    outline:none;
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        .btn-group {
+            margin-top: 5px;
+            button {
+                width: 70px;
+                height: 26px;
+                font-size: 10px;
+
+                &.add-mock {
+                    background: rgb(237, 80, 36);
+                    border: 0;
+                }
+
+                &.cancel {
+                    color: rgb(104, 102, 102);
+                }
+            }
+        }
+
+        
+    }
+}
