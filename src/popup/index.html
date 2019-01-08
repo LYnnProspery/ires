@@ -8,61 +8,69 @@
         </div>
 
         <div class="ops-layout">
-            <button class="create-inspector-btn create-btn">New Inspector</button>
-            <button class="create-mock-btn create-btn">New Mock</button>
+            <button class="create-inspector-btn create-btn" @click="newHandler('Inspector')">New Inspector</button>
+            <button class="create-mock-btn create-btn" @click="newHandler('Mock')">New Mock</button>
 
-            <div class="create-mock-detail-layout">
-                <h4>new mock service</h4>
-                <div class="new-mock-form">
-                    <div class="method-config-btn" @click="showMockMethodList">
-                        {{newMock.selectedMethod}}
-                        <span class="down-arrow"></span>
-                    </div>
-
-                    <div class="method-list" v-show="newMock.showMethodList">
-                        <div class="method-item" v-for="method in mockRequestMethods" @click="selectMockMethod(method)">
-                            {{method}}
-                        </div>
-                    </div>
-
-                    <div class="input-layout">
-                        <input type="text" class="url-config-input">
-                    </div>
-                </div>
-
-                <div class="btn-group">
-                    <button class="add-mock create-btn">ADD</button>
-                    <button class="cancel create-btn">CANCEL</button>
-                </div>
-            </div>
-
-            <div class="create-mock-detail-layout">
-                    <h4>new inspector</h4>
+            <transition name="fade">
+                <div class="create-detail-layout" v-show="creatingMock">
+                    <h4>new mock service</h4>
                     <div class="new-mock-form">
-                        <div class="method-config-btn">
+                        <div class="method-config-btn" @click="showMockMethodList('Mock')">
                             {{newMock.selectedMethod}}
                             <span class="down-arrow"></span>
                         </div>
-    
-                        <!-- <div class="method-list" v-show="newMock.showMethodList">
-                            <div class="method-item" v-for="method in mockRequestMethods" @click="selectMockMethod(method)">
+
+                        <div class="method-list" v-show="newMock.showMethodList">
+                            <div class="method-item" v-for="method in mockRequestMethods" @click="selectMockMethod(method, 'Mock')">
                                 {{method}}
                             </div>
-                        </div> -->
-    
+                        </div>
+
                         <div class="input-layout">
                             <input type="text" class="url-config-input">
                         </div>
                     </div>
-    
+
                     <div class="btn-group">
                         <button class="add-mock create-btn">ADD</button>
-                        <button class="cancel create-btn">CANCEL</button>
+                        <button class="cancel create-btn" @click="destroyHandler('Mock')">CANCEL</button>
                     </div>
                 </div>
+            </transition>
+
+            <transition name="fade">
+                <div class="create-detail-layout create-inspector-detail-layout" v-show="creatingInspector">
+                    <h4>new inspector</h4>
+                    <div class="new-mock-form">
+                        <div class="method-config-btn"  @click="showMockMethodList('Inspector')">
+                            {{newInspector.selectedMethod}}
+                            <span class="down-arrow"></span>
+                        </div>
+
+
+                        <div class="method-list" v-show="newInspector.showMethodList">
+                            <div class="method-item" v-for="method in inspectorMethods" @click="selectMockMethod(method, 'Inspector')">
+                                {{method}}
+                            </div>
+                        </div>
+
+                        <div class="input-layout">
+                            <input type="text" class="url-config-input">
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="add-mock create-btn">ADD</button>
+                        <button class="cancel create-btn" @click="destroyHandler('Inspector')">CANCEL</button>
+                    </div>
+                </div>
+            </transition>
+
         </div>
 
         <div class="divider"></div>
+
+        <div class="mock-service-panel"></div>
 
         <div class="request-inspector-panel">
 

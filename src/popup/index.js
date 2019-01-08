@@ -8,23 +8,42 @@ new Vue({
             mockRequestMethodList: ['GET', 'POST', 'PUT', 'DELETE'],
             selectedMethod: 'GET',
             showMethodList: false
-        }
+        },
+        newInspector: {
+            mockRequestMethodList: ['GET', 'POST', 'PUT', 'DELETE'],
+            selectedMethod: 'GET',
+            showMethodList: false
+        },
+        creatingMock: false,
+        creatingInspector: false
     },
 
     computed: {
         mockRequestMethods() {
             return this.newMock.mockRequestMethodList.filter(item => item !== this.newMock.selectedMethod);
+        },
+
+        inspectorMethods() {
+            return this.newInspector.mockRequestMethodList.filter(item => item !== this.newInspector.selectedMethod);
         }
     },
 
     methods: {
-        showMockMethodList() {
-            this.newMock.showMethodList = true;
+        showMockMethodList(type) {
+            this['new' + type].showMethodList = true;
         },
 
-        selectMockMethod(method) {
-            this.newMock.selectedMethod = method;
-            this.newMock.showMethodList = false;
+        selectMockMethod(method, type) {
+            this['new' + type].selectedMethod = method;
+            this['new' + type].showMethodList = false;
+        },
+
+        newHandler(type) {
+            this['creating' + type] = true;
+        },
+
+        destroyHandler(type) {
+            this['creating' + type] = false;
         }
     }
 });

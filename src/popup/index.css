@@ -1,5 +1,7 @@
 body {
-  height: 500px;
+  margin-bottom: 50px;
+  max-height: 800px;
+  overflow-y: scroll;
 }
 * {
   transition: all .4s ease;
@@ -18,6 +20,14 @@ body {
   border-top: 0;
   transform: rotateZ(45deg);
   margin: -5px 0 0 10px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 #app {
   width: 400px;
@@ -55,12 +65,12 @@ body {
   background: #2b7ffe;
   color: #fff;
 }
-#app .ops-layout .create-mock-detail-layout {
+#app .ops-layout .create-detail-layout {
   margin-top: 10px;
   position: relative;
   color: #686666;
 }
-#app .ops-layout .create-mock-detail-layout .method-list {
+#app .ops-layout .create-detail-layout .method-list {
   border-radius: 5px;
   border: 1px solid #ccc;
   overflow: hidden;
@@ -72,18 +82,16 @@ body {
   background: #fff;
   z-index: 99;
 }
-#app .ops-layout .create-mock-detail-layout .method-list .method-item {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: -1px;
+#app .ops-layout .create-detail-layout .method-list .method-item {
   height: 25px;
   padding-left: 10px;
   line-height: 25px;
   cursor: pointer;
 }
-#app .ops-layout .create-mock-detail-layout .method-list .method-item:hover {
+#app .ops-layout .create-detail-layout .method-list .method-item:hover {
   background: #e8e8e8;
 }
-#app .ops-layout .create-mock-detail-layout .new-mock-form {
+#app .ops-layout .create-detail-layout .new-mock-form {
   width: 100%;
   display: flex;
   align-items: center;
@@ -91,12 +99,12 @@ body {
   overflow: hidden;
   border-radius: 5px;
 }
-#app .ops-layout .create-mock-detail-layout .new-mock-form .method-config-btn {
+#app .ops-layout .create-detail-layout .new-mock-form .method-config-btn {
   display: inline-block;
   height: 30px;
-  background: #fff;
+  background: #ececec;
   border: 1px solid #ccc;
-  width: 70px;
+  width: 80px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -104,14 +112,14 @@ body {
   margin: -1px;
   cursor: pointer;
 }
-#app .ops-layout .create-mock-detail-layout .new-mock-form .method-config-btn:hover {
-  background: #ececec;
+#app .ops-layout .create-detail-layout .new-mock-form .method-config-btn:hover {
+  background: #e0e0e0;
 }
-#app .ops-layout .create-mock-detail-layout .new-mock-form .input-layout {
+#app .ops-layout .create-detail-layout .new-mock-form .input-layout {
   display: inline-block;
   flex: 1;
 }
-#app .ops-layout .create-mock-detail-layout .new-mock-form .url-config-input {
+#app .ops-layout .create-detail-layout .new-mock-form .url-config-input {
   height: 30px;
   width: 100%;
   box-sizing: border-box;
