@@ -11,6 +11,7 @@
   "author": "lynn",
   "license": "MIT",
   "dependencies": {
+    "monaco-editor": "^0.15.6",
     "vue": "^2.5.21"
   },
   "devDependencies": {

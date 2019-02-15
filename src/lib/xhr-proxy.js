@@ -6,6 +6,7 @@ const PROXY_UNWRITEABLE_PROP_PREFIX = '_proxy_';
 const PROPERTY_SETTER_KEY = 'setter';
 const PROPERTY_GETTER_KEY = 'getter';
 
+
 const proxyXhr = (opt) => {
     proxyOpt = opt;
 
@@ -16,7 +17,6 @@ const proxyXhr = (opt) => {
     XMLHttpRequest = function() {
         // keep instances for diffent requests
         // originXhrInstance = new originXMLHttpRequest();
-        
     };
 
     Object.keys(originXMLHttpRequest.prototype).forEach(attr => {
@@ -73,10 +73,6 @@ const proxyGetter = (propOnXhrPrototype) => {
         
         let xhrPropGetter = (proxyOpt[propOnXhrPrototype] || {})[PROPERTY_GETTER_KEY];
 
-        if (propOnXhrPrototype === 'responseText') {
-            console.log(xhrPropGetter && xhrPropGetter(value, originXhrInstance), '1', value)
-        }
-
         return xhrPropGetter && xhrPropGetter(value, originXhrInstance) || value;
     };
 };
@@ -95,8 +91,8 @@ const proxySetter = (propOnXhrPrototype) => {
                 propHandler(this) || bussinessXhrPropValue && bussinessXhrPropValue.apply(xhrInstance, args);
             };
         } else {
-            // proxy property which like 'timeout'
-            // if no propHandler means has not set any logic in the inspector hook
+            // proxy property which like 'timeout' 
+            // if no propHandler means has not set any logic in the intercepter hook
             // In case of no propHandler, no xhrPropSetter and no return value of xhrPropSetter will both do nothing
             let xhrPropSetter = (propHandler || {})[PROPERTY_SETTER_KEY];
             

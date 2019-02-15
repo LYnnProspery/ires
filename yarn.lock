@@ -797,11 +797,6 @@ acorn@^5.0.0, acorn@^5.6.2:
   resolved "https://npm.corp.kuaishou.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
   integrity sha1-Z6ojG/iBKXS4UjWpZ3Hra9B+onk=
 
-ajax-hook@^1.8.2:
-  version "1.8.2"
-  resolved "https://npm.corp.kuaishou.com/ajax-hook/-/ajax-hook-1.8.2.tgz#b005161c85d1f208f0ffba05855ab3501d1f9fb1"
-  integrity sha1-sAUWHIXR8gjw/7oFhVqzUB0fn7E=
-
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://npm.corp.kuaishou.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
@@ -3253,6 +3248,11 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+monaco-editor@^0.15.6:
+  version "0.15.6"
+  resolved "https://npm.corp.kuaishou.com/monaco-editor/-/monaco-editor-0.15.6.tgz#d63b3b06f86f803464f003b252627c3eb4a09483"
+  integrity sha1-1js7BvhvgDRk8AOyUmJ8PrSglIM=
 
 move-concurrently@^1.0.1:
   version "1.0.1"
